@@ -2,6 +2,7 @@
 import React from 'react';
 import Card from '../components/Card';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 type Product = {
   title: string;
@@ -13,12 +14,17 @@ type Product = {
 const ProductsDams: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get('https://dummyjson.com/products');
+      setProducts(response.data.products);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   useEffect(() => {
-    // Fetch data dari DummyJSON
-    fetch('https://dummyjson.com/products')
-      .then((response) => response.json())
-      .then((data) => setProducts(data.products))
-      .catch((error) => console.error('Error fetching data:', error));
+    fetchProducts();
   }, []);
 
   return (
