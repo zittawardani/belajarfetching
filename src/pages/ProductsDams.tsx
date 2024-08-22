@@ -7,6 +7,7 @@ type Product = {
   title: string;
   description: string;
   images: string;
+  price: number;
 }
 
 const ProductsDams: React.FC = () => {
@@ -30,6 +31,7 @@ const ProductsDams: React.FC = () => {
             title={item.title}
             description={item.description}
             images={item.images}
+            price={item.price}
           />
         ))}
       </div>
