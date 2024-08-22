@@ -11,7 +11,7 @@ type Product = {
   price: number;
 }
 
-const ProductsDams: React.FC = () => {
+const ProductsDams = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   const fetchProducts = async () => {

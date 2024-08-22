@@ -1,6 +1,6 @@
 import React from 'react';
 
-type CardProps = {
+type Product = {
   title: string;
   description: string;
   images: string;
@@ -12,7 +12,7 @@ const convertNumber = (value:number)=>{
   return formatNumber
 }
 
-const Card: React.FC<CardProps> = ({ title, description, images, price }) => {
+const Card: React.FC<Product> = ({ title, description, images, price }) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <img className="w-full h-48 object-cover" src={images} alt={title} />
