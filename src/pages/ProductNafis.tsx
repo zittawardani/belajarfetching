@@ -43,7 +43,7 @@ interface Review {
   reviewerEmail: string;
 }
 
-const ProductNafis: React.FC = () => {
+const ProductNafis= () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   const getProductsData = async () => {
